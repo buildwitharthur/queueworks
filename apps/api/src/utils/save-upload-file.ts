@@ -1,22 +1,28 @@
 import { mkdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
-export async function saveUploadFile(
-    buffer: Buffer,
-    jobId: string,
-) {
-    const uploadsDirectory = path.resolve('storage/uploads')
+type StorageDirectory = 'uploads' | 'results'
 
-    await mkdir(uploadsDirectory, {
+export async function saveCsvFile(
+    content: Buffer | string,
+    id: string,
+    directory: StorageDirectory,
+) {
+    const storageDirectory = path.resolve(
+        'storage',
+        directory,
+    )
+
+    await mkdir(storageDirectory, {
         recursive: true,
     })
 
     const filePath = path.join(
-        uploadsDirectory,
-        `${jobId}.csv`,
+        storageDirectory,
+        `${id}.csv`,
     )
 
-    await writeFile(filePath, buffer)
+    await writeFile(filePath, content)
 
     return filePath
 }

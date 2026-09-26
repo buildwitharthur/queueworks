@@ -8,7 +8,7 @@ import {
     contactsQueue,
     PROCESS_CONTACTS_JOB_NAME,
 } from '../queue/contacts-queue.js'
-import { saveUploadFile } from '../utils/save-upload-file.js'
+import { saveCsvFile } from '../utils/save-upload-file.js'
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024
 
@@ -69,9 +69,9 @@ createJobRouter.post(
         }
 
         const jobId = `qw_${randomUUID()}`
-        const filePath = await saveUploadFile(file.buffer, jobId)
+        const filePath = await saveCsvFile(file.buffer, jobId, 'uploads')
 
-        await contactsQueue.add(
+        const job = await contactsQueue.add(
             PROCESS_CONTACTS_JOB_NAME,
             {
                 fileName: file.originalname,
@@ -83,7 +83,7 @@ createJobRouter.post(
         )
 
         return response.status(202).json({
-            jobId,
+            jobId: job.id,
         })
     },
 )

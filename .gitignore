@@ -19,3 +19,6 @@ Thumbs.db
 
 apps/api/storage/uploads/*
 !apps/api/storage/uploads/.gitkeep
+
+apps/api/storage/results/*
+!apps/api/storage/results/.gitkeep
