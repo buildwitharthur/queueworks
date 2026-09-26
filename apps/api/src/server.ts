@@ -4,6 +4,7 @@ import cors from "cors";
 import express from "express";
 
 import { errorHandler } from "./middlewares/error-handler.js";
+import { createJobRouter } from "./routes/create-job.js";
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.get("/health", (_request, response) => {
         service: "queueworks-api",
     });
 });
+
+app.use(createJobRouter);
 
 app.use(errorHandler);
 
