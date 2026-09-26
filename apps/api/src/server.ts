@@ -1,27 +1,32 @@
-import 'dotenv/config'
-import express from 'express'
-import cors from 'cors'
+import "dotenv/config";
 
-const app = express()
+import cors from "cors";
+import express from "express";
 
-app.use(express.json())
+import { errorHandler } from "./middlewares/error-handler.js";
+
+const app = express();
 
 app.use(
     cors({
         origin: process.env.WEB_URL,
         credentials: true,
     }),
-)
+);
 
-app.get('/health', (_request, response) => {
+app.use(express.json());
+
+app.get("/health", (_request, response) => {
     return response.status(200).json({
-        status: 'ok',
-        service: 'queueworks-api',
-    })
-})
+        status: "ok",
+        service: "queueworks-api",
+    });
+});
 
-const port = Number(process.env.PORT) || 3333
+app.use(errorHandler);
 
-app.listen(port, '0.0.0.0', () => {
-    console.log(`QueueWorks API running on port ${port}`)
-})
+const port = Number(process.env.PORT) || 3333;
+
+app.listen(port, "0.0.0.0", () => {
+    console.log(`QueueWorks API running on port ${port}`);
+});
