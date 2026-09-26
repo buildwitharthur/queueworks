@@ -1,3 +1,5 @@
+import { Download } from 'lucide-react'
+
 import type { Job } from '../types'
 
 import { Badge } from './ui/badge'
@@ -33,31 +35,6 @@ const statusConfig = {
         tone: 'danger',
     },
 } as const
-
-function DownloadIcon() {
-    return (
-        <svg
-            aria-hidden="true"
-            className="size-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="1.5"
-        >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12" />
-            <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m8 12 4 4 4-4"
-            />
-            <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M5 19.5A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5"
-            />
-        </svg>
-    )
-}
 
 export function JobStatus({
     job,
@@ -111,9 +88,11 @@ export function JobStatus({
     return (
         <section className="flex min-w-0 flex-col p-8">
             <div className="flex items-center justify-between gap-4">
-                <h2 className="text-heading text-text">Status atual</h2>
+                <h2 className="text-base leading-6 font-semibold text-text">
+                    Status atual
+                </h2>
                 {job ? (
-                    <span className="font-mono text-xs text-text-muted">
+                    <span className="font-mono text-[11px] leading-4 text-text-muted">
                         Job {job.id}
                     </span>
                 ) : null}
@@ -121,7 +100,7 @@ export function JobStatus({
 
             <div className="mt-5 flex items-center justify-between gap-3">
                 <p
-                    className={`min-w-0 truncate text-body ${job ? 'font-semibold text-text' : 'font-normal text-text-muted'}`}
+                    className={`min-w-0 truncate text-[17px] leading-[26px] ${job ? 'font-semibold text-text' : 'font-normal text-text-muted'}`}
                     title={job?.fileName}
                 >
                     {fileName}
@@ -129,7 +108,7 @@ export function JobStatus({
                 <Badge tone={status.tone}>{status.label}</Badge>
             </div>
 
-            <p className="mt-0.5 min-h-6 text-small text-text-muted">
+            <p className="mt-0.5 min-h-6 text-sm leading-[22px] text-text-muted">
                 {statusMessage}
             </p>
 
@@ -138,7 +117,7 @@ export function JobStatus({
                     value={progress}
                     tone={job?.state === 'failed' ? 'danger' : 'default'}
                 />
-                <div className="mt-2 text-right font-mono text-xs text-text">
+                <div className="mt-2 text-right font-mono text-[11px] leading-4 text-text">
                     {progress}%
                 </div>
             </div>
@@ -149,8 +128,8 @@ export function JobStatus({
                         key={label}
                         className={`min-w-0 p-3 ${index % 2 === 1 ? 'border-l border-line' : ''} ${index >= 2 ? 'border-t border-line sm:border-t-0' : ''} ${index > 0 ? 'sm:border-l' : 'sm:border-l-0'}`}
                     >
-                        <dt className="text-label text-text-muted">{label}</dt>
-                        <dd className="mt-0.5 text-title font-semibold tabular-nums text-text">
+                        <dt className="text-xs text-text-muted">{label}</dt>
+                        <dd className="mt-0.5 text-[22px] leading-[30px] font-semibold tabular-nums text-text">
                             {value.toLocaleString('pt-BR')}
                         </dd>
                     </div>
@@ -164,7 +143,7 @@ export function JobStatus({
                     disabled={job?.state !== 'completed' || isDownloading}
                     onClick={onDownload}
                 >
-                    <DownloadIcon />
+                    <Download size={18} strokeWidth={1.5} />
                     {isDownloading ? 'Baixando...' : 'Baixar resultado'}
                 </Button>
             </div>

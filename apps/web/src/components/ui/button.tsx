@@ -6,7 +6,7 @@ const buttonVariants = tv({
     base: [
         'inline-flex items-center justify-center gap-2',
         'h-11 rounded-pill border border-transparent px-5',
-        'cursor-pointer whitespace-nowrap text-small font-semibold',
+        'cursor-pointer whitespace-nowrap text-[15px] leading-6 font-semibold',
         'transition-colors',
         'disabled:pointer-events-none disabled:cursor-not-allowed',
         'disabled:border-line disabled:bg-surface-raised disabled:text-text-muted',

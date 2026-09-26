@@ -4,9 +4,11 @@ export function RecentJobs() {
     return (
         <section className="mt-14">
             <div>
-                <h2 className="text-heading text-text">Jobs recentes</h2>
+                <h2 className="text-[18px] leading-[26px] font-semibold tracking-[-0.01em] text-text">
+                    Jobs recentes
+                </h2>
 
-                <p className="mt-0.5 text-small text-text-muted">
+                <p className="mt-0.5 text-sm leading-[22px] text-text-muted">
                     Arquivos processados nesta sessão.
                 </p>
             </div>

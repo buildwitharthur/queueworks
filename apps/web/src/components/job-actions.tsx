@@ -1,3 +1,5 @@
+import { Ellipsis } from 'lucide-react'
+
 import { CopyJobIdAction } from './copy-job-id-action'
 import { DeleteJobAction } from './delete-job-action'
 import { Button } from './ui/button'
@@ -17,7 +19,7 @@ export function JobActions({ jobId }: JobActionsProps) {
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button variant="icon" size="icon" aria-label="Ações do job">
-                    <span aria-hidden="true">···</span>
+                    <Ellipsis size={18} strokeWidth={1.5} />
                 </Button>
             </DropdownMenuTrigger>
 

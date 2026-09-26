@@ -26,34 +26,34 @@
     --code-comment: #56615a;
     --code-highlight: rgba(0, 230, 118, 0.12);
 
-    --font-sans: Inter, system-ui, -apple-system, sans-serif;
+    --font-sans: "Geist Variable", system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-    --type-display-size: 44px;
-    --type-display-line-height: 48px;
+    --type-display-size: 36px;
+    --type-display-line-height: 42px;
     --type-display-weight: 600;
     --type-display-letter-spacing: -0.02em;
     --type-title-size: 28px;
-    --type-title-line-height: 36px;
+    --type-title-line-height: 34px;
     --type-title-weight: 600;
-    --type-title-letter-spacing: -0.015em;
-    --type-heading-size: 20px;
-    --type-heading-line-height: 28px;
+    --type-title-letter-spacing: -0.02em;
+    --type-heading-size: 18px;
+    --type-heading-line-height: 26px;
     --type-heading-weight: 600;
     --type-heading-letter-spacing: -0.01em;
-    --type-body-size: 17px;
-    --type-body-line-height: 28px;
+    --type-body-size: 15px;
+    --type-body-line-height: 24px;
     --type-body-weight: 400;
-    --type-small-size: 15px;
-    --type-small-line-height: 24px;
+    --type-small-size: 14px;
+    --type-small-line-height: 22px;
     --type-small-weight: 400;
-    --type-meta-size: 13px;
-    --type-meta-line-height: 20px;
+    --type-meta-size: 12px;
+    --type-meta-line-height: 18px;
     --type-meta-weight: 500;
-    --type-label-size: 12px;
+    --type-label-size: 11px;
     --type-label-line-height: 16px;
     --type-label-weight: 500;
-    --type-label-letter-spacing: 0.04em;
+    --type-label-letter-spacing: 0.02em;
 
     --space-1: 4px;
     --space-2: 8px;
@@ -206,6 +206,8 @@
         background: var(--bg);
         color: var(--text);
         font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 24px;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
     }

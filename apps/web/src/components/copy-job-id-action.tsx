@@ -1,3 +1,4 @@
+import { Copy } from 'lucide-react'
 import { toast } from 'sonner'
 
 import { DropdownMenuItem } from './ui/dropdown-menu'
@@ -19,6 +20,7 @@ export function CopyJobIdAction({ jobId }: CopyJobIdActionProps) {
 
     return (
         <DropdownMenuItem onSelect={handleCopy}>
+            <Copy size={18} strokeWidth={1.5} />
             Copiar ID do job
         </DropdownMenuItem>
     )

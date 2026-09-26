@@ -38,19 +38,19 @@ export function JobsTable() {
 
     return (
         <div className="overflow-x-auto rounded-lg border border-line bg-surface">
-            <table className="w-full min-w-[580px] border-collapse text-sm">
+            <table className="w-full min-w-[580px] border-collapse text-sm leading-5">
                 <thead>
                     <tr className="border-b border-line">
-                        <th className="px-5 py-3 text-left text-label font-medium text-text-muted">
+                        <th className="px-5 py-3 text-left text-xs font-medium text-text-muted">
                             Arquivo
                         </th>
-                        <th className="px-5 py-3 text-left text-label font-medium text-text-muted">
+                        <th className="px-5 py-3 text-left text-xs font-medium text-text-muted">
                             Status
                         </th>
-                        <th className="px-5 py-3 text-right text-label font-medium text-text-muted">
+                        <th className="px-5 py-3 text-right text-xs font-medium text-text-muted">
                             Linhas
                         </th>
-                        <th className="px-5 py-3 text-left text-label font-medium text-text-muted">
+                        <th className="px-5 py-3 text-left text-xs font-medium text-text-muted">
                             Criado em
                         </th>
                         <th className="w-14 px-3 py-3">
@@ -64,7 +64,7 @@ export function JobsTable() {
                         <tr>
                             <td
                                 colSpan={5}
-                                className="px-5 py-7 text-small text-text-muted"
+                                className="px-5 py-7 text-sm leading-[22px] text-text-muted"
                             >
                                 Nenhum job processado ainda.
                             </td>
@@ -102,7 +102,7 @@ export function JobsTable() {
                                         {rows.toLocaleString('pt-BR')}
                                     </td>
 
-                                    <td className="px-5 py-3 font-mono text-meta text-text-muted">
+                                    <td className="px-5 py-3 font-mono text-[13px] text-text-muted">
                                         {createdAt}
                                     </td>
 

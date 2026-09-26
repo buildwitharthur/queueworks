@@ -122,8 +122,10 @@ export function ProcessContacts() {
         <section>
             <div className="mb-8 flex items-end justify-between gap-6">
                 <div>
-                    <h1 className="text-title text-text">Processar contatos</h1>
-                    <p className="mt-1 text-small text-text-muted">
+                    <h1 className="text-title font-semibold text-text">
+                        Processar contatos
+                    </h1>
+                    <p className="mt-1 text-[15px] leading-6 text-text-muted">
                         Envie um arquivo CSV e acompanhe o processamento.
                     </p>
                 </div>

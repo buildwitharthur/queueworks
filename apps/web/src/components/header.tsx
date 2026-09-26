@@ -7,7 +7,7 @@ export function Header() {
                 <div className="flex items-center gap-2.5">
                     <LabLogo className="size-6" />
 
-                    <span className="text-base font-semibold tracking-[-0.01em] text-text">
+                    <span className="text-[15px] font-semibold tracking-[-0.01em] text-text">
                         QueueWorks
                     </span>
                 </div>

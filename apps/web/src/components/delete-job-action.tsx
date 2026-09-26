@@ -1,3 +1,4 @@
+import { Trash2 } from 'lucide-react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 
@@ -41,6 +42,7 @@ export function DeleteJobAction({ jobId }: DeleteJobActionProps) {
             disabled={deleteMutation.isPending}
             onSelect={handleDelete}
         >
+            <Trash2 size={18} strokeWidth={1.5} />
             {deleteMutation.isPending
                 ? 'Removendo...'
                 : 'Remover do histórico'}

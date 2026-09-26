@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { FileText, RefreshCw, Upload, X } from 'lucide-react'
 import { toast } from 'sonner'
 
 import { Button } from './ui/button'
@@ -23,66 +24,6 @@ function formatFileSize(bytes: number) {
     }
 
     return `${(bytes / 1024 / 1024).toFixed(1)} MB`
-}
-
-function UploadIcon() {
-    return (
-        <svg
-            aria-hidden="true"
-            className="size-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="1.5"
-        >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 16V4" />
-            <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m8 8 4-4 4 4"
-            />
-            <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M5 14v4.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V14"
-            />
-        </svg>
-    )
-}
-
-function FileIcon() {
-    return (
-        <svg
-            aria-hidden="true"
-            className="size-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="1.5"
-        >
-            <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 3H6.75A1.75 1.75 0 0 0 5 4.75v14.5A1.75 1.75 0 0 0 6.75 21h10.5A1.75 1.75 0 0 0 19 19.25V8.5L13.5 3Z"
-            />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13 3v6h6" />
-        </svg>
-    )
-}
-
-function CloseIcon() {
-    return (
-        <svg
-            aria-hidden="true"
-            className="size-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="1.5"
-        >
-            <path strokeLinecap="round" d="m6 6 12 12M18 6 6 18" />
-        </svg>
-    )
 }
 
 export function CsvUpload({
@@ -137,26 +78,30 @@ export function CsvUpload({
 
     return (
         <section className="flex min-w-0 flex-col border-b border-line p-8 lg:border-r lg:border-b-0">
-            <h2 className="text-heading text-text">Novo processamento</h2>
+            <h2 className="text-base leading-6 font-semibold text-text">
+                Novo processamento
+            </h2>
 
-            <p className="mt-1 text-small text-text-muted">
+            <p className="mt-1 text-sm leading-[22px] text-text-muted">
                 O arquivo deve seguir o formato{' '}
-                <code className="rounded-sm border border-line bg-surface-raised px-1.5 py-0.5 text-meta text-text">
+                <code className="rounded-sm border border-line bg-surface-raised px-1.5 py-0.5 text-[13px] text-text">
                     name,email,company
                 </code>
             </p>
 
-            <p className="mt-1 text-small text-text-muted">Máximo 5 MB</p>
+            <p className="mt-1 text-sm leading-[22px] text-text-muted">
+                Máximo 5 MB
+            </p>
 
             <div className="mt-5 flex flex-1 flex-col">
                 {file ? (
                     <div className="flex min-h-[196px] items-start gap-3 rounded-xl border border-line bg-surface p-4">
                         <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-surface-raised text-text">
-                            <FileIcon />
+                            <FileText size={20} strokeWidth={1.5} />
                         </span>
 
                         <div className="min-w-0 flex-1 pt-0.5">
-                            <p className="truncate text-small font-semibold text-text">
+                            <p className="truncate text-[15px] font-semibold text-text">
                                 {file.name}
                             </p>
                             <p className="mt-0.5 font-mono text-xs text-text-muted">
@@ -173,7 +118,7 @@ export function CsvUpload({
                                 disabled={disabled}
                                 onClick={handleReplace}
                             >
-                                <UploadIcon />
+                                <RefreshCw size={18} strokeWidth={1.5} />
                             </Button>
                             <Button
                                 variant="icon"
@@ -183,7 +128,7 @@ export function CsvUpload({
                                 disabled={disabled}
                                 onClick={() => onFileChange(null)}
                             >
-                                <CloseIcon />
+                                <X size={18} strokeWidth={1.5} />
                             </Button>
                         </div>
                     </div>
@@ -206,13 +151,13 @@ export function CsvUpload({
                         onDrop={handleDrop}
                     >
                         <span className="mb-3 flex size-11 items-center justify-center rounded-xl border border-line bg-surface text-text">
-                            <UploadIcon />
+                            <Upload size={20} strokeWidth={1.5} />
                         </span>
-                        <span className="text-small font-medium text-text">
+                        <span className="text-[15px] font-medium text-text">
                             Arraste seu CSV aqui
                         </span>
-                        <span className="text-meta text-text-muted">ou</span>
-                        <span className="text-small font-medium text-accent-text underline decoration-1 underline-offset-4">
+                        <span className="text-[13px] text-text-muted">ou</span>
+                        <span className="text-sm font-medium text-accent-text underline decoration-1 underline-offset-4">
                             Clique para selecionar
                         </span>
                     </label>
