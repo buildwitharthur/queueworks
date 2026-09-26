@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -12 120 132" width="240" height="264">
+<defs>
+ <linearGradient id="std" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#72FDA1"/><stop offset=".55" stop-color="#00E676"/><stop offset="1" stop-color="#00C860"/></linearGradient>
+ <linearGradient id="gld" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1B251D"/><stop offset="1" stop-color="#050806"/></linearGradient>
+ <linearGradient id="lqd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#72FDA1"/><stop offset=".45" stop-color="#00E676"/><stop offset="1" stop-color="#00C860"/></linearGradient>
+ <radialGradient id="shd" cx=".78" cy=".7" r=".6"><stop offset="0" stop-color="#030504" stop-opacity=".45"/><stop offset="1" stop-color="#030504" stop-opacity="0"/></radialGradient>
+ <linearGradient id="snd" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+ <radialGradient id="bbd" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#F3F5F1"/><stop offset=".35" stop-color="#72FDA1"/><stop offset="1" stop-color="#00C860"/></radialGradient>
+ <radialGradient id="hld" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#00E676" stop-opacity="0.55"/><stop offset="1" stop-color="#00E676" stop-opacity="0"/></radialGradient>
+ <clipPath id="cld"><path d="M50.5 27 V47.2 L24.2 91.4 Q20.8 99.6 29.5 99.6 H90.5 Q99.2 99.6 95.8 91.4 L69.5 47.2 V27 Z"/></clipPath>
+ <filter id="bld" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
+</defs>
+<ellipse cx="60" cy="84" rx="54" ry="36" fill="url(#hld)"/>
+<g filter="url(#bld)" opacity="0.8"><g clip-path="url(#cld)"><path d="M10 74 C24 66 36 80 52 73 S82 64 110 72 V110 H10 Z" fill="#00E676"/></g></g>
+<path d="M46 24 V46 L19 92 Q13 104 27 104 H93 Q107 104 101 92 L74 46 V24 Z" fill="url(#gld)"/>
+<g clip-path="url(#cld)">
+ <path d="M10 74 C24 66 36 80 52 73 S82 64 110 72 V110 H10 Z" fill="url(#lqd)"/>
+ <path d="M10 74 C24 66 36 80 52 73 S82 64 110 72 V110 H10 Z" fill="url(#shd)"/>
+ <path d="M10 74 C24 66 36 80 52 73 S82 64 110 72" fill="none" stroke="#F3F5F1" stroke-opacity=".7" stroke-width="1.6"/>
+ <circle cx="47" cy="88" r="3.4" fill="url(#bbd)"/>
+ <circle cx="64" cy="82" r="2.6" fill="url(#bbd)"/>
+ <circle cx="75" cy="92" r="3" fill="url(#bbd)"/>
+ <circle cx="58" cy="57" r="2.4" fill="url(#bbd)" opacity=".9"/>
+ <path d="M52 32 V49 L30 88 Q28 92 31 94 L35 94 L56 52 V32 Z" fill="url(#snd)" opacity="0.5"/>
+</g>
+<path d="M46 24 V46 L19 92 Q13 104 27 104 H93 Q107 104 101 92 L74 46 V24 Z" fill="none" stroke="url(#std)" stroke-width="4" stroke-linejoin="round"/>
+<rect x="39" y="15" width="42" height="10" rx="5" fill="url(#std)"/>
+<rect x="42" y="16.5" width="20" height="2.2" rx="1.1" fill="#FFFFFF" opacity=".45"/>
+<circle cx="55" cy="4" r="5.2" fill="url(#bbd)"/>
+<circle cx="68" cy="-3" r="3.4" fill="url(#bbd)"/>
+<circle cx="70" cy="8" r="3.8" fill="url(#bbd)"/>
+</svg>
