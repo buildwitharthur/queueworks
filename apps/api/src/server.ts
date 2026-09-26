@@ -7,6 +7,7 @@ import { errorHandler } from './middlewares/error-handler.js'
 
 import { createJobRouter } from './routes/create-job.js'
 import { getJobRouter } from './routes/get-job.js'
+import { listJobsRouter } from './routes/list-jobs.js'
 import { startContactsWorker } from './queue/contacts-worker.js'
 
 const app = express()
@@ -29,6 +30,7 @@ app.get('/health', (_request, response) => {
 
 app.use(createJobRouter)
 app.use(getJobRouter)
+app.use(listJobsRouter)
 
 app.use(errorHandler)
 
