@@ -8,9 +8,11 @@
         "start": "node build/server.js"
     },
     "dependencies": {
+        "bullmq": "^6.3.8",
         "cors": "^2.8.5",
         "dotenv": "^16.6.1",
         "express": "^5.1.0",
+        "ioredis": "^6.0.0",
         "multer": "^2.4.0",
         "zod": "^4.6.5"
     },
