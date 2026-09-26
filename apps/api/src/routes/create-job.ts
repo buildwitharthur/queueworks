@@ -4,6 +4,10 @@ import { Router } from 'express'
 import { z } from 'zod'
 
 import { upload } from '../lib/multer.js'
+import {
+    contactsQueue,
+    PROCESS_CONTACTS_JOB_NAME,
+} from '../queue/contacts-queue.js'
 import { saveUploadFile } from '../utils/save-upload-file.js'
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024
@@ -65,12 +69,21 @@ createJobRouter.post(
         }
 
         const jobId = `qw_${randomUUID()}`
+        const filePath = await saveUploadFile(file.buffer, jobId)
 
-        await saveUploadFile(file.buffer, jobId)
+        await contactsQueue.add(
+            PROCESS_CONTACTS_JOB_NAME,
+            {
+                fileName: file.originalname,
+                filePath,
+            },
+            {
+                jobId,
+            },
+        )
 
-        return response.status(201).json({
-            id: jobId,
-            fileName: file.originalname,
+        return response.status(202).json({
+            jobId,
         })
     },
 )
